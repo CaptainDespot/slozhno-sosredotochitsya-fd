@@ -1,5 +1,373 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
 .page {
-  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  font-size: var(--font-size);
+  font-family: var(--font);
+  background: var(--bg-color) var(--bg-image) fixed center / cover;
+  font-weight: 400;
+  line-height: 130%;
+}
+
+.header {
+  padding: 10px;
+  height: max(100vh, 668px);
+  position: relative;
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr;
+  align-content: center;
+  font-weight: 700;
+}
+
+.decorated-zone {
+  position: relative;
+}
+
+.decorated-zone::before {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  content: "";
+  border-top: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
+  inline-size: 25px;
+  block-size: 25px;
+}
+
+.decorated-zone::after {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  content: "";
+  border-bottom: 1px solid var(--border-color);
+  border-left: 1px solid var(--border-color);
+  inline-size: 25px;
+  block-size: 25px;
+}
+
+.header__theme-menu {
+  align-self: center;
+}
+
+.header__theme-menu-list {
+  display: grid;
+  justify-content: end;
+  gap: 10px;
+}
+
+.header__theme-menu-button {
+  padding: 1.5px 13px;
+  background: transparent;
+  color: var(--border-color);
+  border: 1px solid transparent;
+  text-align: center;
+}
+
+.header__theme-menu-button_active {
+  pointer-events: none;
+  border: 1px solid var(--border-color);
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.header__theme-menu-button:hover {
+  border: 1px solid var(--hv-color);
+  cursor: pointer;
+}
+
+.title {
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: 83%;
+  color: var(--header-title-color);
+}
+
+.title_header {
+  text-shadow: 4px 4px 0 var(--accent-color);
+}
+
+.text_decor {
+  background-color: var(--title-decor);
+  font-size: var(--font-size);
+  color: var(--title-color);
+}
+
+.title_text {
+  display: flex;
+  align-self: center;
+  line-height: 130%;
+}
+
+.rec {
+  font-weight: 400;
+  line-height: 139%;
+  position: absolute;
+  display: var(--rec-display);
+  top: 10px;
+  right: 29px;
+  content: "";
+  color: var(--accent-color);
+  text-align: center;
+  padding-inline-end: 10px;
+  text-transform: uppercase;
+}
+
+.rec::after {
+  content: "";
+  position: absolute;
+  top: 7px;
+  right: -10px;
+  width: 9px;
+  height: 9px;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  box-shadow: 0 0 4px 2px var(--accent-color);
+}
+
+.main_content {
+  margin-block: 40px;
+  margin-inline: 10px;
+}
+
+.content {
+  margin-block-end: 50px;
+}
+
+.question {
+  margin-block-end: 20px;
+  font-size: var(--font-size);
+  color: var(--question-color);
+}
+
+.answer {
+  font-weight: 400;
+}
+
+.resum {
+  margin-block-end: 20px;
+}
+
+.main_content-text {
+  margin-block: 10px 20px;
+  color: var(--content-color);
+}
+
+.question__section-advice-link {
+  border: 1px solid transparent;
+  text-decoration: none;
+  text-shadow: 2px 2px 0 var(--accent-color);
+}
+
+.question__section-advice-link:hover {
+  border-bottom: 1px solid var(--link-color);
+}
+
+.question__section-advice-link:focus {
+  outline: none;
+}
+
+.question__section-advice-link:focus-visible {
+  border: 1px solid var(--link-color);
+}
+
+.image_list {
+  margin-top: 8px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  max-width: 100%;
+}
+
+.image_list img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.footer {
+  height: max(100vh, 668px);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer_title {
+  text-shadow: 2px 2px 0 var(--accent-color);
+}
+
+
+@media (min-width: 768px) {
+
+  .header {
+    height: max(100vh, 1024px);
+    padding-inline: 0 20px;
+    padding-block: 20px;
+    justify-items: end;
+  }
+
+  .title_header {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    justify-self: start;
+  }
+
+  .title_text {
+    inline-size: 49%;
+  }
+
+  .rec {
+    top: 20px;
+    right: 40px;
+  }
+
+  .decorated-zone::before {
+    top: 20px;
+    right: 20px;
+  }
+
+  .decorated-zone::after {
+    bottom: 20px;
+    left: 20px;
+  }
+
+  .rec::after {
+    right: -10px;
+  }
+
+  .main_content {
+    margin-block: 60px;
+    margin-inline: 20px;
+  }
+
+  .question {
+    margin-inline-end: 7px;
+  }
+
+  .main_content-text {
+    color: var(--content-color);
+  }
+
+  .content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 0px 20px;
+    margin-block-end: 60px;
+  }
+
+  .content_section {
+    grid-column: 2;
+  }
+
+  .content_question {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0px;
+  }
+
+  .content_question > .content_section {
+    grid-column: 1;
+  }
+
+  .topic {
+    max-width: 236px;
+  }
+
+  .image_list {
+    margin-top: 18px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, auto);
+    gap: 20px;
+  }
+
+  .image_list img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .image-list_item:nth-child(1) {
+    grid-column: 1 / 3;
+  }
+
+  .image-list_item:nth-child(2) {
+    grid-column: 3;
+    grid-row: 1 / -2;
+  }
+
+  .image-list_item:nth-child(3) {
+    grid-row: 2 / 4;
+  }
+
+  .image-list_item:nth-child(4) {
+    grid-row: 2;
+    grid-column: 2;
+  }
+
+  .image-list_item:nth-child(5) {
+    grid-column: 2 / -1;
+  }
+
+  .footer {
+    height: max(100vh, 1024px);
+  }
+}
+
+
+@media (min-width: 1024px) {
+
+  .header {
+    height: max(100vh, 768px);
+    justify-items: center;
+  }
+
+  .title {
+    font-size: var(--desctop-size);
+    justify-self: start;
+  }
+
+  .title-text_decor {
+    justify-self: end;
+  }
+
+  .header__theme-menu {
+    padding-left: 20px;
+    align-self: start;
+  }
+
+  .header__theme-menu-list {
+    padding: 0;
+    display: flex;
+    gap: 10px;
+  }
+
+  .content {
+    gap: 0px 10px;
+  }
+
+  .topic {
+    max-width: 315px;
+  }
+
+  .content_question {
+    display: grid;
+    align-items: start;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0 20px;
+  }
+
+  .content_question > .topic {
+    grid-column: 1 / -1;
+  }
+
+  .content_question > .content_section {
+    grid-column: auto;
+  }
+
+  .footer {
+    height: max(100vh, 768px);
+  }
 }
