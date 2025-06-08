@@ -1,1 +1,1 @@
-https://github.com/CaptainDespot/slozhno-sosredotochitsya-fd#
+https://github.com/CaptainDespot/slozhno-sosredotochitsya-fd
