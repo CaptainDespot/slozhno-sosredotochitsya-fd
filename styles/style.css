@@ -233,10 +233,6 @@
     left: 20px;
   }
 
-  .rec::after {
-    right: -10px;
-  }
-
   .main_content {
     margin-block: 60px;
     margin-inline: 20px;
@@ -244,10 +240,6 @@
 
   .question {
     margin-inline-end: 7px;
-  }
-
-  .main_content-text {
-    color: var(--content-color);
   }
 
   .content {
@@ -341,7 +333,6 @@
   .header__theme-menu-list {
     padding: 0;
     display: flex;
-    gap: 10px;
   }
 
   .content {
